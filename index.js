@@ -15,7 +15,10 @@ function formatOutputLabel() {
   // const tokens = extractTokensInWord(word);
   // console.log(tokens)
   // Test 3 
-  const tokens2 = extractTokensInWord_V2(word);
+  const tokens2 = extractTokensInWord_V2(
+    word, 
+    { separator: true}
+  );
   console.log(tokens2)
 }
 
@@ -33,9 +36,11 @@ function extractTokensInWord(word) {
 }
 
 /**Better version of the extractTokensInWord function. */
-function extractTokensInWord_V2(word, char1, char2) {
+function extractTokensInWord_V2(word, config) {
   const results = []; 
-  const re = /\@(.*?)@/g;
+  const re_no_sep = /@(.*?)@/g;
+  const re_with_sep = /(@.*?@)/g;
+  const re = config.separator ? re_with_sep : re_no_sep;
   let text;
 
   while ((text = re.exec(word))) {
