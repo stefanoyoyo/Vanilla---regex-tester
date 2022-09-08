@@ -9,14 +9,7 @@ formatOutputLabel();
 
 function formatOutputLabel() {
   const word = '@ciao@ @come@ @va?@';
-  const regB = new RegExp('@[a-zA-Z1-9?]*@', 'g');
-  const regBa = new RegExp('@[\w]*@', 'gm');
-  
-  // Mostra uno solo dei 3 gruppi. Capire perchè.
-  const resBB = regB.exec(word);
-  console.log(resBB)
-
-  // test1();
+  test1();
   const tokens = extractTokensInWord(word);
   console.log(tokens)
 }
