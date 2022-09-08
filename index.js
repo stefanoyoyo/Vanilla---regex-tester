@@ -33,10 +33,12 @@ function extractTokensInWord(word) {
 }
 
 /**Better version of the extractTokensInWord function. */
-function extractTokensInWord_V2(str) {
-  var results = [], re = /\@(.*?)@/g, text;
+function extractTokensInWord_V2(word, char1, char2) {
+  const results = []; 
+  const re = /\@(.*?)@/g;
+  let text;
 
-  while(text = re.exec(str)) {
+  while ((text = re.exec(word))) {
     results.push(text[1]);
   }
 
