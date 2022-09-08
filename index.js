@@ -14,6 +14,21 @@ function formatOutputLabel() {
   console.log(tokens)
 }
 
+
+// #region find tokens in String
+
+/**Funziona. */
+/**Function looking for all the tokens matching a specified pattern. */
+function extractTokensInWord(word) {
+  const tokens = [];
+  word.replace(/\@(.*?)@/g, function(a, b) {
+    tokens.push(b);
+  });
+  return tokens;
+}
+
+// #endregion 
+
 // #region test stackoverflow 
 
 /**Funziona. Returns :
@@ -32,17 +47,3 @@ function test1() {
 }
 
 // #endregion 
-
-// #region find tokens in String
-
-/**Funziona. */
-/**Function looking for all the tokens matching a specified pattern. */
-function extractTokensInWord(word) {
-  const tokens = [];
-  word.replace(/\@(.*?)@/g, function(a, b) {
-    tokens.push(b);
-  });
-  return tokens;
-}
-
-// #ensregion 
