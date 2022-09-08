@@ -17,7 +17,7 @@ function formatOutputLabel() {
   console.log(resBB)
 
   // test1();
-  const tokens = findTokensInWord(word);
+  const tokens = extractTokensInWord(word);
   console.log(tokens)
 }
 
@@ -44,7 +44,7 @@ function test1() {
 
 /**Funziona. */
 /**Function looking for all the tokens matching a specified pattern. */
-function findTokensInWord(word) {
+function extractTokensInWord(word) {
   const tokens = [];
   word.replace(/\@(.*?)@/g, function(a, b) {
     tokens.push(b);
