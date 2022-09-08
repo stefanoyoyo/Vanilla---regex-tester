@@ -9,9 +9,14 @@ formatOutputLabel();
 
 function formatOutputLabel() {
   const word = '@ciao@ @come@ @va?@';
-  test1();
-  const tokens = extractTokensInWord(word);
-  console.log(tokens)
+  // Test 1 
+  // test1();
+  // Test 2 
+  // const tokens = extractTokensInWord(word);
+  // console.log(tokens)
+  // Test 3 
+  const tokens2 = extractTokensInWord_V2(word);
+  console.log(tokens2)
 }
 
 
@@ -25,6 +30,17 @@ function extractTokensInWord(word) {
     tokens.push(b);
   });
   return tokens;
+}
+
+/**Better version of the extractTokensInWord function. */
+function extractTokensInWord_V2(str) {
+  var results = [], re = /\@(.*?)@/g, text;
+
+  while(text = re.exec(str)) {
+    results.push(text[1]);
+  }
+
+  return results;
 }
 
 // #endregion 
