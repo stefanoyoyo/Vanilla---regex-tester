@@ -16,9 +16,9 @@ function formatOutputLabel() {
   const resBB = regB.exec(word);
   console.log(resBB)
 
-  test1();
-  findTokensInWord(word);
-
+  // test1();
+  const tokens = findTokensInWord(word);
+  console.log(tokens)
 }
 
 // #region test stackoverflow 
@@ -45,11 +45,11 @@ function test1() {
 /**Funziona. */
 /**Function looking for all the tokens matching a specified pattern. */
 function findTokensInWord(word) {
-  var tokens = [];
+  const tokens = [];
   word.replace(/\@(.*?)@/g, function(a, b) {
     tokens.push(b);
   });
-  console.log(tokens);
+  return tokens;
 }
 
 // #ensregion 
