@@ -17,7 +17,7 @@ function formatOutputLabel() {
   // Test 3 
   const tokens2 = extractTokensInWord_V2(
     word, 
-    { separator: true}
+    { includeSeparator: false}
   );
   console.log(tokens2)
 }
@@ -42,7 +42,7 @@ function extractTokensInWord_V2(word, config) {
     re_no_sep : /@(.*?)@/g,
     re_with_sep : /(@.*?@)/g
   };
-  const re = config.separator ? availableRegex.re_with_sep : availableRegex.re_no_sep;
+  const re = config.includeSeparator ? availableRegex.re_with_sep : availableRegex.re_no_sep;
   let text;
 
   while ((text = re.exec(word))) {
