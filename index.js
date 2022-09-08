@@ -38,9 +38,11 @@ function extractTokensInWord(word) {
 /**Better version of the extractTokensInWord function. */
 function extractTokensInWord_V2(word, config) {
   const results = []; 
-  const re_no_sep = /@(.*?)@/g;
-  const re_with_sep = /(@.*?@)/g;
-  const re = config.separator ? re_with_sep : re_no_sep;
+  const availableRegex = {
+    re_no_sep : /@(.*?)@/g,
+    re_with_sep : /(@.*?@)/g
+  };
+  const re = config.separator ? availableRegex.re_with_sep : availableRegex.re_no_sep;
   let text;
 
   while ((text = re.exec(word))) {
